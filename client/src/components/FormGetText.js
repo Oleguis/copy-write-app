@@ -1,39 +1,37 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
 
-function FormGetText({listaTextos, setListaTextos}) {
-  const [newText, setNewText] = useState('');
-  const dominioText = 'http://localhost:3001';
+function FormGetText ({ listaTextos, setListaTextos }) {
+  const [newText, setNewText] = useState('')
+  const dominioText = 'http://localhost:3001'
 
-  const handletChange = function(event){
-    setNewText(event.target.value);
+  const handletChange = function (event) {
+    setNewText(event.target.value)
   }
 
-  const sendText = function(event){
-		event.preventDefault();
-    if (newText !== ''){
-        fetch(`${dominioText}/iecho?text=${newText}`)
+  const sendText = function (event) {
+    event.preventDefault()
+    if (newText !== '') {
+      fetch(`${dominioText}/iecho?text=${newText}`)
         .then(resp => resp.json())
         .then(textReversado => {
-          setListaTextos([textReversado.text, ...listaTextos]);          
-        })                                                  
+          setListaTextos([textReversado.text, ...listaTextos])
+        })
         .catch(error => console.log(error))
     }
-    setNewText('');
+    setNewText('')
   }
-
   return (
-    // <div style={styles}>
-        <form className='bg-danger text-center' onSubmit={sendText}>
-            <input 
-              className="w-50 h-100 p-1 m-3" 
-              type="text" 
-              onChange={handletChange}
-              value={newText}/>
-            <Button className="bottom m-2" type="submit">Send</Button>
-        </form>
-    // </div>
-
-)}
+    <form className='bg-danger text-center' onSubmit={sendText}>
+      <input
+        className='w-50 h-100 p-1 m-3'
+        type='text'
+        onChange={handletChange}
+        value={newText}
+      />
+      <Button className='bottom m-2' type='submit'>Send</Button>
+    </form>
+  )
+}
 
 export default FormGetText

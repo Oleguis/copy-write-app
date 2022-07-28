@@ -2,7 +2,7 @@ const request = require('supertest');
 const expect = require("chai").expect;
 const app = require('../src/app');
 
-    describe("/iecho?text=Prueba", function () {
+    describe("Pruebas para la ruta /iecho", function () {
       it("Respuesta Content-Type: applicatin/json", function () {
         return request(app) // supertest nos permite hacer y testear requests HTTP
           .get("/iecho?text=hola mundo") // hacemos un request HTTP: GET a '/houses'
