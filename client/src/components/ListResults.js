@@ -12,22 +12,24 @@ function ListResults({ listaTextos }) {
       justify-content-center 
       w-100'>
       <h5 className='text-start'>Resultado:</h5>
-      <ul className='list-group'>
+      <ul className='list-group w-100 d-flex align-items-center h-100'>
         {listaTextos.map((texto, pos) => {
-          return (<li className='list-group-item m-1 w-75 border border-dark text-start' key = {texto + pos}>{texto}</li>)
+          return (<li 
+                    className='list-group-item 
+                              m-1 
+                              w-75 
+                              border 
+                              border-dark 
+                              text-start
+                              rounded' 
+                              key = {texto + pos}
+                              >
+                              {texto}
+                  </li>)
         })}
       </ul>
     </div>
   )
 }
 
-const styles = {
-  div: {
-    display: "flex",
-    width: "7"
-  },
-  ul: {
-    listStyle: "none",
-  }
-}
 export default ListResults

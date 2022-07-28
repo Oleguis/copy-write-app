@@ -2,8 +2,6 @@ const morgan = require('morgan');
 const express = require('express')
 const cors = require('cors');
 const app = express()
-const PORT = '3001'
-
 
 app.use(morgan('dev'));
 app.use(cors())
@@ -20,7 +18,4 @@ app.get('/iecho', function (req, res) {
     res.status(200).send(respuesta)
 })
 
-app.listen(PORT,()=>{
-    console.log(`%%Servidor escuchando en el puerto ${PORT}`)
-})
 module.exports = app;

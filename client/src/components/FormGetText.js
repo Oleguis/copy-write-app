@@ -26,11 +26,11 @@ function FormGetText({listaTextos, setListaTextos}) {
     // <div style={styles}>
         <form className='bg-danger text-center' onSubmit={sendText}>
             <input 
-              className="w-50 h-100 m-2" 
+              className="w-50 h-100 p-1 m-3" 
               type="text" 
               onChange={handletChange}
               value={newText}/>
-            <Button className="bottom" type="submit">Send</Button>
+            <Button className="bottom m-2" type="submit">Send</Button>
         </form>
     // </div>
 
