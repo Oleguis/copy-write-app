@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button'
 
 function FormGetText ({ listaTextos, setListaTextos }) {
   const [newText, setNewText] = useState('')
-  const dominioText = 'http://localhost:3001'
+  const dominioText = 'https://backend-copy-write.herokuapp.com' // 'http://localhost:3001'
 
   const handletChange = function (event) {
     setNewText(event.target.value)

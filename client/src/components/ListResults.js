@@ -16,7 +16,7 @@ function ListResults ({ listaTextos }) {
       <ul className='list-group w-100 d-flex align-items-center h-100'>
         {listaTextos.map((texto, pos) => {
           return (
-            <li className='list-group-item m-1 w-75 border-dark text-start rounded' key={texto + pos}>
+            <li className='list-group-item m-2 w-75 border border-secondary text-start rounded' key={texto + pos}>
               {texto}
             </li>
           )
